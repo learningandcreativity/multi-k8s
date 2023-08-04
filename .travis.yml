@@ -10,7 +10,7 @@ before_install:
   # https://sdk.cloud.google.com - install gcp sdk and everything after that is to install locally on our instance by travis ci
   - curl https://sdk.cloud.google.com | bash > /dev/null;
   # $Home/google-cloud-sdk - look at dir of google cloud sdk and apply some config inside shell in travis
-  - source $Home/google-cloud-sdk/path.bash.inc
+  - source $HOME/google-cloud-sdk/path.bash.inc
   # install kubectl inside travis env
   - gcloud components update kubectl
   #authenticate with GCP
