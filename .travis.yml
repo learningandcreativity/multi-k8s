@@ -18,7 +18,7 @@ before_install:
   #set below three commands on shell in GCP terminal to configure kubectl in console in GCP
   - gcloud config set project multi-k8s-394918
   - gcloud config set compute/zone us-central1-c
-  - gcloud container clusters multi-cluster
+  - gcloud container clusters get-credentials multi-cluster
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t pkhot/react-test -f ./client/Dockerfile.dev ./client
 
