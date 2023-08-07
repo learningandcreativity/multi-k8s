@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+
+kind: Certificate
+metadata:
+  name: virtualfinderx-com-tls
+spec:
+  secretName: virtualfinderx-com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: virtualfinderx.com
+  dnsNames:
+    - virtualfinderx.com
+    - www.virtualfinderx.com
