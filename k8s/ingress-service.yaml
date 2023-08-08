@@ -18,9 +18,9 @@ spec:
         - www.virtualfinderx.com
       secretName: virtualfinderx-com
   rules:
-   - host: virtualfinderx.com
-     http:
-        paths:
+    - host: virtualfinderx.com
+        http:
+          paths:
           - path: /?(.*)
             # UPDATE PATH
             pathType: Prefix
@@ -41,26 +41,26 @@ spec:
                 name: server-cluster-ip-service
                 port:
                   number: 5000
-   - host: www.virtualfinderx.com
-     http:
-         paths:
-             - path: /?(.*)
-           # UPDATE PATH
-               pathType: Prefix
-           # ADD PATHTYPE
-               backend:
-                 service:
-                   # UPDATE SERVICE FIELDS
-                   name: client-cluster-ip-service
-                   port:
-                     number: 3000
-                 - path: /api/?(.*)
-                   # UPDATE PATH
-                   pathType: Prefix
-                   # ADD PATHTYPE
-                   backend:
-                     service:
-                       # UPDATE SERVICE FIELDS
-                       name: server-cluster-ip-service
-                       port:
-                         number: 5000
+    - host: www.virtualfinderx.com
+        http:
+          paths:
+              - path: /?(.*)
+            # UPDATE PATH
+                pathType: Prefix
+            # ADD PATHTYPE
+                backend:
+                  service:
+                    # UPDATE SERVICE FIELDS
+                    name: client-cluster-ip-service
+                    port:
+                      number: 3000
+                - path: /api/?(.*)
+                  # UPDATE PATH
+                  pathType: Prefix
+                  # ADD PATHTYPE
+                  backend:
+                    service:
+                      # UPDATE SERVICE FIELDS
+                      name: server-cluster-ip-service
+                      port:
+                        number: 5000
